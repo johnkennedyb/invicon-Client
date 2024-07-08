@@ -13,7 +13,7 @@ const Login = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         
-        axios.post('https://invicon-server.onrender.com/login', { email, password })
+        axios.post('https://invicon-server.vercel.app/login', { email, password })
             .then(result => {
                 console.log(result);
                 if (result.data === "Success") {
