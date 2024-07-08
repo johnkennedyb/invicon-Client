@@ -14,7 +14,7 @@ const Register = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         
-        axios.post('https://invicon-server.vercel.app/register', { name, email, password })
+        axios.post('https://invicon-server.onrender.com/register', { name, email, password })
             .then(result => {
                 console.log(result);
                 if (result.data === "Already registered") {
