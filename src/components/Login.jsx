@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css'; // Make sure to import your CSS file
 
 const Login = () => {
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
@@ -28,46 +28,58 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <div className="d-flex justify-content-center align-items-center text-center vh-100" style= {{ backgroundImage : "linear-gradient(#000000,#0095ff,rgba(93,0,255,.555))"}}>
-                <div className="bg-white p-3 rounded slide-in" style={{ width: '40%' }}>
-                    <h2 className='mb-3 text-primary'>Login</h2>
-                    <form onSubmit={handleSubmit}>
-                        <div className="mb-3 text-start">
-                            <label htmlFor="exampleInputEmail1" className="form-label">
-                                <strong>Email Id</strong>
-                            </label>
-                            <input
-                                type="email"
-                                placeholder="Enter Email"
-                                className="form-control"
-                                id="exampleInputEmail1"
-                                onChange={(event) => setEmail(event.target.value)}
-                                required
-                            />
-                        </div>
-                        <div className="mb-3 text-start">
-                            <label htmlFor="exampleInputPassword1" className="form-label">
-                                <strong>Password</strong>
-                            </label>
-                            <input
-                                type="password"
-                                placeholder="Enter Password"
-                                className="form-control"
-                                id="exampleInputPassword1"
-                                onChange={(event) => setPassword(event.target.value)}
-                                required
-                            />
-                        </div>
-                        <button type="submit" className="btn btn-primary">Login</button>
-                    </form>
-                    <p className='container my-2'>Don&apos;t have an account?</p>
-                    <Link to='/register' className="btn btn-secondary">Signup</Link>
-                </div>
+       
+        <div className="relative  ">
+  <div className="absolute inset-0  bg-cover bg-center opacity-50" ></div>
+
+        <div className="container mx-auto mt-5 mb-5 relative bg-white bg-opacity-75 p-10">
+    <div className="flex h-screen">
+        <div className="w-1/2 bg-auto" style={{ backgroundImage: 'url(https://res.cloudinary.com/dw7w2at8k/image/upload/v1720518711/Home_hvdksm.png)' }}></div>
+        <div className="w-1/2 flex items-center justify-center bg-gray-100">
+            <div className="bg-white p-8 rounded shadow-md w-3/4 animate__animated animate__fadeInRight">
+                <h2 className="mb-6 text-2xl font-bold text-dark">Login</h2>
+                <form onSubmit={handleSubmit}>
+                    <div className="mb-4 text-left">
+                        <label htmlFor="exampleInputEmail1" className="block text-sm font-bold mb-2">
+                            Email Id
+                        </label>
+                        <input
+                            type="email"
+                            placeholder="Enter Email"
+                            className="form-control block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                            id="exampleInputEmail1"
+                            onChange={(event) => setEmail(event.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="mb-6 text-left">
+                        <label htmlFor="exampleInputPassword1" className="block text-sm font-bold mb-2">
+                            Password
+                        </label>
+                        <input
+                            type="password"
+                            placeholder="Enter Password"
+                            className="form-control block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                            id="exampleInputPassword1"
+                            onChange={(event) => setPassword(event.target.value)}
+                            required
+                        />
+                    </div>
+                    <button type="submit" className="w-full bg-dark text-white py-2 rounded-md hover:bg-dark transition duration-300 ease-in-out transform hover:scale-105">Login</button>
+                </form>
+                <p className="my-4">Don't have an account? <Link to='/register' className='text-dark'>Signup</Link></p>
             </div>
         </div>
-    )
+    </div>
+
+
+
+            </div>
+            </div>
+           
+            
+       
+    );
 }
 
 export default Login;
-
