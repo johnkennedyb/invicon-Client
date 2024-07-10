@@ -31,7 +31,7 @@ const Register = () => {
 
     return (
         <div className="flex h-screen overflow-hidden">
-            <div className="w-1/2 bg-auto  bg-gray-100 " style={{ backgroundImage: 'url(https://res.cloudinary.com/dw7w2at8k/image/upload/v1720518711/Home_hvdksm.png)', backgroundColor:"#f3f4f6" }}></div>
+            <div className="w-1/2 bg-auto  bg-gray-100 " style={{ backgroundImage: 'url(https://res.cloudinary.com/dw7w2at8k/image/upload/v1720626946/Home_1_d6rirw.png)', backgroundColor:"#f3f4f6" }}></div>
             <div className="w-1/2 flex items-center justify-center bg-gray-100">
                 <div className="bg-white p-8 rounded shadow-md w-3/4 animate__animated animate__fadeInRight">
                     <h2 className="mb-6 text-2xl font-bold text-dark">Signup</h2>
