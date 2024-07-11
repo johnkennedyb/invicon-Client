@@ -37,7 +37,7 @@ const Register = () => {
             .then(result => {
                 if (result.data === "Email verified successfully") {
                     alert("Registered successfully! Please Login to proceed.");
-                    navigate('/login');
+                    navigate('/home');
                 } else {
                     alert(result.data);
                 }
