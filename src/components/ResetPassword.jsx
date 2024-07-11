@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 const ResetPassword = () => {
     const [password, setPassword] = useState('');
-    const history = useHistory();
+    const navigate = useNavigate();
     const query = new URLSearchParams(useLocation().search);
     const token = query.get('token');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://invicon-server.onrender.com/reset-password', { token, newPassword: password });
-            alert(response.data);
-            history.push('/login');
+            const response = await axios.post('http://127.0.0.1:3001/reset-password', { token, newPassword: password });
+            alert(response.data.message);
+            navigate('/login');
         } catch (err) {
             alert('Error resetting password');
         }
