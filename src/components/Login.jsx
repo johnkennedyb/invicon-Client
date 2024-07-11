@@ -33,7 +33,7 @@ const Login = () => {
             <div className="w-full md:w-1/2 flex flex-col items-center justify-center bg-gray-100">
                 <h1 className="block md:hidden mb-6 text-4xl font-bold text-dark">Invicon</h1>
                 <div className="bg-white p-8 rounded shadow-md w-3/4 animate__animated animate__fadeInRight">
-                    <h3 className="mb-6 text-2xl font-boldgi  text-dark">Login</h3>
+                    <h3 className="mb-6 text-2xl font-bold  text-dark">Login</h3>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4 text-left">
                             <label htmlFor="exampleInputEmail1" className="block text-sm font-bold mb-2">
