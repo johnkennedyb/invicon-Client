@@ -36,7 +36,7 @@ const Register = () => {
         axios.post('https://invicon-server.onrender.com/verify', { email, verificationCode })
             .then(result => {
                 if (result.data === "Email verified successfully") {
-                    alert("Registered successfully! Please Login to proceed.");
+                    alert("Registered successfully!.");
                     navigate('/home');
                 } else {
                     alert(result.data);
