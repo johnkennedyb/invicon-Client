@@ -23,7 +23,7 @@ const Register = () => {
                     navigate('/login');
                 } else {
                     alert("Registered successfully! Please Login to proceed.")
-                    navigate('/login');
+                    navigate('/home');
                 }
             })
             .catch(err => console.log(err));
