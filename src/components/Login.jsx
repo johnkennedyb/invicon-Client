@@ -13,7 +13,7 @@ const Login = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         
-        axios.post('http://127.0.0.1:3001/login', { email, password })
+        axios.post('https://invicon-server.onrender.com/login', { email, password })
             .then(result => {
                 console.log(result);
                 if (result.data === "Success") {

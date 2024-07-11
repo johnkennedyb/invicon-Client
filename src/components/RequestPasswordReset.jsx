@@ -8,7 +8,7 @@ const RequestPasswordReset = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://127.0.0.1:3001/request-password-reset', { email });
+      await axios.post('https://invicon-server.onrender.com/request-password-reset', { email });
       setMessage('Password reset email sent');
     } catch (error) {
       setMessage('Error sending password reset email');

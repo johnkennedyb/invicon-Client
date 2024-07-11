@@ -15,7 +15,7 @@ const Register = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         
-        axios.post('http://127.0.0.1:3001/register', { name, email, password })
+        axios.post('https://invicon-server.onrender.com/register', { name, email, password })
             .then(result => {
                 console.log(result);
                 if (result.data === "Already registered") {

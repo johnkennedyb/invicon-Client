@@ -11,7 +11,7 @@ const ResetPassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://127.0.0.1:3001/reset-password', { token, newPassword: password });
+            const response = await axios.post('https://invicon-server.onrender.com/reset-password', { token, newPassword: password });
             alert(response.data.message);
             navigate('/login');
         } catch (err) {
