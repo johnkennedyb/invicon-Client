@@ -53,7 +53,7 @@ const Register = () => {
                 <div className="bg-white p-8 rounded shadow-md w-3/4 animate__animated animate__fadeInRight">
                     {step === 1 && (
                         <>
-                            <h3 className="mb-6 text-2xl font-bold text-dark">Signup</h3>
+                            <h3 className="mb-6 text-2xl font-bold text-dark">Register</h3>
                             <form onSubmit={handleRegister}>
                                 <div className="mb-4 text-left">
                                     <label htmlFor="exampleInputName" className="block text-sm font-bold mb-2">
@@ -94,7 +94,7 @@ const Register = () => {
                                         required
                                     />
                                 </div>
-                                <button type="submit" className="w-full bg-dark text-white py-2 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105">Signup</button>
+                                <button type="submit" className="w-full bg-dark text-white py-2 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105">Register</button>
                             </form>
                             <p className="my-4 mx-2">Already have an account? <Link to='/login' className='text-dark'>Login</Link></p>
                         </>
