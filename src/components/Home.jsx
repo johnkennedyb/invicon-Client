@@ -1,6 +1,69 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FiGift as GiftIcon, FiGrid as LayoutGridIcon, FiUsers as UsersIcon, FiSettings as SettingsIcon, FiCopy as CopyIcon } from 'react-icons/fi'; // Importing icons from react-icons
 
-export default function Component() {
+const Sidebar = () => {
+  const handleCopyReferralCode = () => {
+    navigator.clipboard.writeText('ABC123');
+    alert('Referral code copied to clipboard!');
+  };
+
+  return (
+    <aside className="hidden w-64 flex-col border-r border-muted bg-gray-900 p-6 md:flex" style={{backgroundColor: "#282434"}}>
+      <div className="mb-6 flex items-center gap-2">
+        <GiftIcon className="h-6 w-6 text-white" />
+        <h1 className="text-2xl text-white font-bold font-helvetica">Invite Rewards</h1>
+      </div>
+      <nav className="flex flex-col gap-2">
+        <Link
+          to="#"
+          className="flex items-center gap-2 text-white rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
+        >
+          <LayoutGridIcon className="h-4 text-white w-4" />
+          Dashboard
+        </Link>
+        <Link
+          to="#"
+          className="flex items-center text-white gap-2 rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
+        >
+          <GiftIcon className="h-4 w-4" />
+          Rewards
+        </Link>
+        <Link
+          to="#"
+          className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
+          style={{ color: "#201c1c" }}
+        >
+          <UsersIcon className="h-4 w-4" />
+          Referrals
+        </Link>
+        <Link
+          to="#"
+          className="flex text-white items-center gap-2 rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
+        >
+          <SettingsIcon className="h-4 w-4" />
+          Settings
+        </Link>
+      </nav>
+      <div className="mt-auto grid gap-4 text-white rounded-lg bg-[#282434] p-4">
+        <div className="grid gap-1">
+          <h3 className="text-sm font-bold font-helvetica">Your Referral Code</h3>
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-medium font-helvetica">ABC123</span>
+            <button
+              className="bg-transparent p-2 rounded-full"
+              onClick={handleCopyReferralCode}
+            >
+              <CopyIcon className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  );
+};
+
+const Component = () => {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
 
@@ -8,61 +71,9 @@ export default function Component() {
   const toggleCollapsible2 = () => setIsOpen2(!isOpen2);
 
   return (
-    <div className="flex  h-screen">
-      <nav className="bg-dark text-white  w-64 p-6 space-y-4">
-        <div className="space-y-2">
-          <h3 className="text-lg font-semibold">Invite Rewards</h3>
-          <div className="space-y-2">
-            <a href="#" className="flex items-center text-white gap-2  no-underline text-sm font-medium hover:bg-gray-900 rounded-md px-3 py-2">
-              <LayoutGridIcon className="w-4 h-4 text-white" />
-              Free Preview
-            </a>
-            <div className="space-y-1 mt-3 mb-3">
-              <button
-                onClick={toggleCollapsible1}
-                className="flex items-center justify-between gap-2 no-underline text-sm font-medium hover:bg-gray-900 rounded-md px-3 py-2"
-              >
-                How to Access
-                <ChevronRightIcon className={`w-4 h-4 transition-transform ${isOpen1 ? 'rotate-90' : ''}`} />
-              </button>
-              {isOpen1 && (
-                <div className="pl-6">
-                  <a href="#" className="flex no-underline items-center gap-2 text-base font-medium hover:bg-gray-900 rounded-md px-4 py-3">
-                    <button className="bg-gray-500 text-white px-3 py-2 rounded-md">
-                      How to Access
-                    </button>
-                  </a>
-                  <a href="#" className="flex no-underline items-center gap-2 text-sm font-medium hover:bg-gray-900 rounded-md px-3 py-2">
-                    <button className="bg-gray-600 text-white px-3 py-2 rounded-md">
-                      Instant Access
-                    </button>
-                  </a>
-                </div>
-              )}
-            </div>
-            <div className="space-y-1">
-              <button
-                onClick={toggleCollapsible2}
-                className="flex items-center justify-between gap-2 text-sm font-medium hover:bg-gray-900 rounded-md px-3 py-2"
-              >
-                Invites
-                <ChevronRightIcon className={`w-4 h-4 transition-transform ${isOpen2 ? 'rotate-90' : ''}`} />
-              </button>
-              {isOpen2 && (
-                <div className="pl-6">
-                  <a href="#" className="flex no-underline text-white items-center gap-2 text-sm font-medium hover:bg-gray-900 rounded-md px-3 py-2">
-                    Invites
-                  </a>
-                  <a href="#" className="flex no-underline text-white items-center gap-2 text-sm font-medium hover:bg-gray-900 rounded-md px-3 py-2">
-                    How to Invite
-                  </a>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </nav>
-      <main className="flex-1 bg-gray-100 dark:bg-gray-950 p-8 space-y-6">
+    <div className="flex h-screen">
+      <Sidebar />
+      <main className="flex-1 bg-dark-100 dark:bg-gray-950 p-8 space-y-6">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-3xl font-bold text-gray-950">Invite Rewards</h1>
           <p className="text-gray-500 dark:text-gray-400">Earn rewards by inviting your friends to join.</p>
@@ -140,46 +151,6 @@ export default function Component() {
       </main>
     </div>
   );
-}
+};
 
-function ChevronRightIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m9 18 6-6-6-6" />
-    </svg>
-  );
-}
-
-function LayoutGridIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect width="7" height="7" x="3" y="3" rx="1" />
-      <rect width="7" height="7" x="14" y="3" rx="1" />
-      <rect width="7" height="7" x="14" y="14" rx="1" />
-      <rect width="7" height="7" x="3" y="14" rx="1" />
-    </svg>
-  );
-}
-
+export default Component;

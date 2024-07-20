@@ -65,7 +65,7 @@ const Login = () => {
                     </form>
                    
                   
-                 <p className="my-4 flex">Don't have an account? <Link to='/register' className='text-dark'>Signup</Link> </p>   <p className="my-4"> </p>
+                 <p className="my-4  flex">Don't have an account? <Link to='/register' className='text-dark mx-2'>Signup</Link> </p>   <p className="my-4"> </p>
                   <p><Link to='/request' className='text-dark'>Forgotten Password</Link></p>
                        
                 </div>
