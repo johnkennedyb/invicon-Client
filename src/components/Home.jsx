@@ -32,7 +32,7 @@ const Sidebar = () => {
         </Link>
         <Link
           to="#"
-          className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
+          className="flex items-center gap-2  rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
           style={{ color: "#201c1c" }}
         >
           <UsersIcon className="h-4 w-4" />
@@ -72,15 +72,24 @@ const Component = () => {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex ">
       <Sidebar />
-      <main className={`flex-1 p-8 space-y-6 ${isDarkMode ? 'bg-black' : 'bg-gray-100'}`}>
-        <div className="absolute top-4 right-4">
+      <main className={`flex-1 p-8 space-y-6 ${isDarkMode ? 'bg-black' : 'bg-[#101424]'}`}>
+      <div className='bg-dark flex relative px-3 mb-5' style={{ backgroundColor: "#101424",left: 0, padding: "10px", borderRadius: "5px" }}>
+
+      <div className=" text-white flex items-center gap-2">
+        <GiftIcon className="h-6 w-6" />
+        <h1 className="text-2xl font-bold font-helvetica">Invicon</h1>
+      </div>
+
+         <div className=" absolute top-4 px-3 right-4">
           <label className="switch">
             <input type="checkbox" checked={isDarkMode} onChange={toggleTheme} />
             <span className="slider round"></span>
           </label>
         </div>
+        </div>
+        
         <div className="max-w-3xl mx-auto mt-12">
           <h1 
             className="text-3xl font-bold"
