@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiGift as GiftIcon, FiGrid as LayoutGridIcon, FiUsers as UsersIcon, FiSettings as SettingsIcon, FiCopy as CopyIcon } from 'react-icons/fi';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import ToggleSwitch from './ToggleSwitch'; 
+
 import './ToggleSwitch.css'; // Importing the CSS file
 
 const Sidebar = () => {
@@ -19,6 +22,8 @@ const Sidebar = () => {
         <Link
           to="#"
           className="flex items-center text-white gap-2 rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
+        
+          style={{ textDecoration: 'none' }}
         >
           <LayoutGridIcon className="h-4 w-4" />
           Dashboard
@@ -26,14 +31,15 @@ const Sidebar = () => {
         <Link
           to="#"
           className="flex items-center text-white gap-2 rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
+          style={{ textDecoration: 'none' }}
         >
           <GiftIcon className="h-4 w-4" />
           Rewards
         </Link>
         <Link
           to="#"
-          className="flex items-center gap-2  rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
-          style={{ color: "#201c1c" }}
+          className="flex items-center gap-2 text-white rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
+          style={{ textDecoration: 'none' }}
         >
           <UsersIcon className="h-4 w-4" />
           Referrals
@@ -41,7 +47,9 @@ const Sidebar = () => {
         <Link
           to="#"
           className="flex text-white items-center gap-2 rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
-        >
+       
+          style={{ textDecoration: 'none' }}
+          >
           <SettingsIcon className="h-4 w-4" />
           Settings
         </Link>
@@ -74,8 +82,9 @@ const Component = () => {
   return (
     <div className="flex ">
       <Sidebar />
-      <main className={`flex-1 p-8 space-y-6 ${isDarkMode ? 'bg-black' : 'bg-[#101424]'}`}>
-      <div className='bg-dark flex relative px-3 mb-5' style={{ backgroundColor: "#101424",left: 0, padding: "10px", borderRadius: "5px" }}>
+      
+      <main className={`flex-1 p-8 space-y-6 ${isDarkMode ? 'bg-dark' : 'bg-[#101424]'}`}>
+      <div className='bg-dark flex relative px-3 mb-5' style={{ backgroundColor: isDarkMode ? "#101424" : "#282434", left: 0, padding: "10px", borderRadius: "5px" }}>
 
       <div className=" text-white flex items-center gap-2">
         <GiftIcon className="h-6 w-6" />
@@ -83,10 +92,15 @@ const Component = () => {
       </div>
 
          <div className=" absolute top-4 px-3 right-4">
-          <label className="switch">
-            <input type="checkbox" checked={isDarkMode} onChange={toggleTheme} />
-            <span className="slider round"></span>
-          </label>
+         <label className="switch">
+  <input type="checkbox" checked={isDarkMode} onChange={toggleTheme} />
+  <span className="slider round">
+    <span className="icon-container">
+      {isDarkMode ? <FaSun color="#fff" />  : <FaMoon color="#333" />}
+    </span>
+  </span>
+</label>
+
         </div>
         </div>
         

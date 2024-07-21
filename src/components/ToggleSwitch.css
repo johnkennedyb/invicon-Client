@@ -58,4 +58,19 @@
   .slider.round:before {
     border-radius: 50%;
   }
+
+  .bg-black {
+    background-color: #000;
+  }
   
+  .bg-dark {
+    background-color: #12182e;
+  }
+  
+  
+  .icon-container {
+    padding-left: 5px;
+    display: flex;
+    align-items: center; /* Center vertically */
+    height: 100%; /* Take full height of parent (.slider.round) */
+  }
