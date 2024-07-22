@@ -5,6 +5,7 @@ import Login from './Login';
 import Register from './Register';
 import RequestPasswordReset from './RequestPasswordReset';
 import ResetPassword from './ResetPassword';
+import Invites from './Invites';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
           <Route path="/reset" element={<ResetPassword />} />
           <Route path="/request" element={<RequestPasswordReset />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/Referrals" element={<Invites />} />
+
         </Routes>
       </Router>
     </div>

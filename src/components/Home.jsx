@@ -37,7 +37,7 @@ const Sidebar = () => {
           Rewards
         </Link>
         <Link
-          to="#"
+          to="/Referrals"
           className="flex items-center gap-2 text-white rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
           style={{ textDecoration: 'none' }}
         >
