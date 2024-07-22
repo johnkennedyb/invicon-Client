@@ -29,7 +29,7 @@ const Sidebar = () => {
           Dashboard
         </Link>
         <Link
-          to="#"
+          to="/rewards"
           className="flex items-center text-white gap-2 rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
           style={{ textDecoration: 'none' }}
         >
