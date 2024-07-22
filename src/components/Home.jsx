@@ -75,6 +75,14 @@ const Sidebar = () => {
 const Component = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
+  const darkModeStyles = {
+    backgroundColor: '#101424',
+  };
+
+  const lightModeStyles = {
+    backgroundColor: '#ffffff', // Change this to your light mode color if it's not white
+  };
+
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
@@ -83,8 +91,8 @@ const Component = () => {
     <div className="flex ">
       <Sidebar />
       
-      <main className={`flex-1 p-8 space-y-6 ${isDarkMode ? 'bg-dark' : 'bg-[#101424]'}`}>
-      <div className='bg-dark flex relative px-3 mb-5' style={{ backgroundColor: isDarkMode ? "#101424" : "#282434", left: 0, padding: "10px", borderRadius: "5px" }}>
+      <main className='flex-1 p-8 space-y-6 ' style={isDarkMode ? darkModeStyles : lightModeStyles}>
+      <div className=' flex relative px-3 mb-5' style={{ backgroundColor: isDarkMode ? "#101424" : "#282434", left: 0, padding: "10px", borderRadius: "5px" }}>
 
       <div className=" text-white flex items-center gap-2">
         <GiftIcon className="h-6 w-6" />

@@ -53,10 +53,12 @@
   /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
+    border-color: #ccc;
   }
   
   .slider.round:before {
     border-radius: 50%;
+    border-color: #ccc;
   }
 
   .bg-black {
