@@ -20,7 +20,7 @@ const Sidebar = () => {
       </div>
       <nav className="flex text-white flex-col gap-2">
         <Link
-          to="#"
+          to="/dashboard"
           className="flex items-center text-white gap-2 rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
         
           style={{ textDecoration: 'none' }}
@@ -37,7 +37,7 @@ const Sidebar = () => {
           Rewards
         </Link>
         <Link
-          to="/Referrals"
+          to="#"
           className="flex items-center gap-2 text-white rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
           style={{ textDecoration: 'none' }}
         >

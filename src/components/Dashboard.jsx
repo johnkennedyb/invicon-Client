@@ -3,7 +3,7 @@ import { FiSearch } from "react-icons/fi" // Importing icons from react-icons
 export default function Component() {
   return (
     <div className="flex flex-col h-full">
-      <header className="bg-gray-900 text-white px-6 py-4 flex items-center justify-between">
+      <header className="bg-gray-900 text-white px-6 py-4 flex items-center justify-between" style={{ backgroundColor:"#101424"}} >
         <h1 className="text-2xl font-bold">Invites</h1>
         <div className="flex items-center gap-4">
           <button className="border border-white text-white py-1 px-3 rounded" type="button">

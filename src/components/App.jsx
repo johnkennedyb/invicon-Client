@@ -5,7 +5,7 @@ import Login from './Login';
 import Register from './Register';
 import RequestPasswordReset from './RequestPasswordReset';
 import ResetPassword from './ResetPassword';
-import Invites from './Invites';
+import Dashboard from './Dashboard';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Route path="/reset" element={<ResetPassword />} />
           <Route path="/request" element={<RequestPasswordReset />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/Referrals" element={<Invites />} />
+          <Route path="/dashboard" element={<Dashboard />} />
 
         </Routes>
       </Router>
