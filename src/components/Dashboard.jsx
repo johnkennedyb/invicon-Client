@@ -21,7 +21,7 @@ const Sidebar = () => {
        >
       <div className="mb-6 text-white flex items-center gap-2">
         <GiftIcon className="h-6 w-6" />
-        <h1 className="text-2xl font-bold font-helvetica">Invite Rewards</h1>
+        <h1 className="text-xl font-bold mt-2   justify-center  font-helvetica">Invicon Rewards</h1>
       </div>
       </Link>
       <nav className="flex text-white flex-col gap-2">
@@ -31,7 +31,7 @@ const Sidebar = () => {
           style={{ textDecoration: 'none' }}
         >
           <UsersIcon className="h-4 w-4" />
-          Dashboard
+          Invitations 
         </Link>
         <Link
           to="/rewards"

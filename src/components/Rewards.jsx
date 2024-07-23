@@ -20,10 +20,10 @@ const Sidebar = () => {
        to="/home"
        style={{ textDecoration: 'none' }}
        >
-            <div className="mb-6 text-white flex items-center gap-2">
+            <div className="mb-6 text-white items-center justify-center flex items-center gap-2" >
 
       <GiftIcon className="h-6 w-6" />
-        <h1 className="text-2xl font-bold font-helvetica">Invite Rewards</h1>
+      <h1 className="text-xl font-bold mt-2   justify-center  font-helvetica">Invicon Rewards</h1>
         
         </div></Link>  
       
@@ -34,8 +34,7 @@ const Sidebar = () => {
           style={{ textDecoration: 'none' }}
         >
           <UsersIcon className="h-4 w-4" />
-          Dashboard
-        </Link>
+Invitations        </Link>
         <Link
           to="/rewards"
           className="flex items-center text-white gap-2 rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
