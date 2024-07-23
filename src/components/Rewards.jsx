@@ -16,10 +16,17 @@ const Sidebar = () => {
 
   return (
     <aside className="hidden w-64 text-white flex-col p-6 md:flex" style={{ backgroundColor: "#282434", height: '100%' }}>
-      <div className="mb-6 text-white flex items-center gap-2">
-        <GiftIcon className="h-6 w-6" />
+      <Link
+       to="/home"
+       style={{ textDecoration: 'none' }}
+       >
+            <div className="mb-6 text-white flex items-center gap-2">
+
+      <GiftIcon className="h-6 w-6" />
         <h1 className="text-2xl font-bold font-helvetica">Invite Rewards</h1>
-      </div>
+        
+        </div></Link>  
+      
       <nav className="flex text-white flex-col gap-2">
         <Link
           to="/dashboard"
@@ -93,11 +100,15 @@ const Component = () => {
       
       <main className='flex-1 p-8 space-y-6 ' style={isDarkMode ? darkModeStyles : lightModeStyles}>
       <div className=' flex relative px-3 mb-5' style={{ backgroundColor: isDarkMode ? "#101424" : "#282434", left: 0, padding: "10px", borderRadius: "5px" }}>
-
+      <Link
+       to="/home"
+       style={{ textDecoration: 'none' }}
+       >
       <div className=" text-white flex items-center gap-2">
         <GiftIcon className="h-6 w-6" />
         <h1 className="text-2xl font-bold font-helvetica">Invicon</h1>
       </div>
+      </Link>
 
          <div className=" absolute top-4 px-3 right-4">
          <label className="switch">
