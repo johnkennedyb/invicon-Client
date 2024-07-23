@@ -29,7 +29,7 @@ const Sidebar = () => {
         
           style={{ textDecoration: 'none' }}
         >
-          <LayoutGridIcon className="h-4 w-4" />
+          <UsersIcon className="h-4 w-4" />
           Dashboard
         </Link>
         <Link
@@ -40,14 +40,7 @@ const Sidebar = () => {
           <GiftIcon className="h-4 w-4" />
           Rewards
         </Link>
-        <Link
-          to="#"
-          className="flex items-center gap-2 text-white rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
-          style={{ textDecoration: 'none' }}
-        >
-          <UsersIcon className="h-4 w-4" />
-          Referrals
-        </Link>
+       
         <Link
           to="#"
           className="flex text-white items-center gap-2 rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
