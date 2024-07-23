@@ -1,20 +1,117 @@
-import { FiSearch } from "react-icons/fi" // Importing icons from react-icons
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FiGift as GiftIcon, FiGrid as LayoutGridIcon, FiUsers as UsersIcon, FiSettings as SettingsIcon, FiCopy as CopyIcon } from 'react-icons/fi';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import ToggleSwitch from './ToggleSwitch'; 
+import { FiSearch } from "react-icons/fi"; // Importing icons from react-icons
 
-export default function Component() {
+import './ToggleSwitch.css'; // Importing the CSS file
+
+const Sidebar = () => {
+  const handleCopyReferralCode = () => {
+    navigator.clipboard.writeText('ABC123');
+    alert('Referral code copied to clipboard!');
+  };
+
   return (
-    <div className="flex flex-col h-full">
-      <header className="bg-gray-900 text-white px-6 py-4 flex items-center justify-between" style={{ backgroundColor:"#101424"}} >
-        <h1 className="text-2xl font-bold">Invites</h1>
-        <div className="flex items-center gap-4">
-          <button className="border border-white text-white py-1 px-3 rounded" type="button">
-            Invite
-          </button>
-          <button className="p-2 bg-transparent text-white" aria-label="Search" type="button">
-            <FiSearch className="w-5 h-5" />
-          </button>
+    <aside className="hidden w-64 text-white flex-col p-6 md:flex" style={{ backgroundColor: "#282434", height: '100%' }}>
+      <div className="mb-6 text-white flex items-center gap-2">
+        <GiftIcon className="h-6 w-6" />
+        <h1 className="text-2xl font-bold font-helvetica">Invite Rewards</h1>
+      </div>
+      <nav className="flex text-white flex-col gap-2">
+        <Link
+          to="/dashboard"
+          className="flex items-center text-white gap-2 rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
+          style={{ textDecoration: 'none' }}
+        >
+          <LayoutGridIcon className="h-4 w-4" />
+          Dashboard
+        </Link>
+        <Link
+          to="/rewards"
+          className="flex items-center text-white gap-2 rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
+          style={{ textDecoration: 'none' }}
+        >
+          <GiftIcon className="h-4 w-4" />
+          Rewards
+        </Link>
+        <Link
+          to="#"
+          className="flex items-center gap-2 text-white rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
+          style={{ textDecoration: 'none' }}
+        >
+          <UsersIcon className="h-4 w-4" />
+          Referrals
+        </Link>
+        <Link
+          to="#"
+          className="flex text-white items-center gap-2 rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
+          style={{ textDecoration: 'none' }}
+        >
+          <SettingsIcon className="h-4 w-4" />
+          Settings
+        </Link>
+      </nav>
+      <div className="mt-auto grid gap-4 rounded-lg bg-[#282434] p-4">
+        <div className="grid gap-1">
+          <h3 className="text-sm font-bold font-helvetica">Your Referral Code</h3>
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-medium font-helvetica">ABC123</span>
+            <button
+              className="bg-transparent p-2 rounded-full"
+              onClick={handleCopyReferralCode}
+            >
+              <CopyIcon className="h-4 w-4" />
+            </button>
+          </div>
         </div>
-      </header>
-      <div className="flex-1 overflow-y-auto p-6 space-y-4">
+      </div>
+    </aside>
+  );
+};
+
+const Component = () => {
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  const darkModeStyles = {
+    backgroundColor: '#101424',
+  };
+
+  const lightModeStyles = {
+    backgroundColor: '#ffffff', // Change this to your light mode color if it's not white
+  };
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  return (
+    <div className="flex h-screen">
+      <Sidebar />
+      
+      <main className='flex-1 p-8 space-y-6 ' style={isDarkMode ? darkModeStyles : lightModeStyles}>
+      <div className=' flex relative px-3 mb-5' style={{ backgroundColor: isDarkMode ? "#101424" : "#282434", left: 0, padding: "10px", borderRadius: "5px" }}>
+
+      <div className=" text-white flex items-center gap-2">
+        <GiftIcon className="h-6 w-6" />
+        <h1 className="text-2xl font-bold font-helvetica">Invicon</h1>
+      </div>
+
+         <div className=" absolute top-4 px-3 right-4">
+         <label className="switch">
+  <input type="checkbox" checked={isDarkMode} onChange={toggleTheme} />
+  <span className="slider round">
+    <span className="icon-container">
+      {isDarkMode ? <FaSun color="#fff" />  : <FaMoon color="#333" />}
+    </span>
+  </span>
+</label>
+
+        </div>
+        </div>
+        
+        <div className="flex-1 overflow-y-auto p-6 space-y-4">
         <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <svg className="w-10 h-10 rounded-full" fill="currentColor" viewBox="0 0 24 24">
@@ -52,6 +149,9 @@ export default function Component() {
           <div className="text-gray-500 dark:text-gray-400 text-sm">1 invite</div>
         </div>
       </div>
+      </main>
     </div>
-  )
-}
+  );
+};
+
+export default Component;
