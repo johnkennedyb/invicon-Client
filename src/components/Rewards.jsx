@@ -22,7 +22,7 @@ const Sidebar = () => {
        >
             <div className="mb-6 text-white items-center justify-center flex items-center gap-2" >
 
-      <GiftIcon className="h-6 w-6" />
+            <img src="https://res.cloudinary.com/dw7w2at8k/image/upload/v1721763323/00f6d818-53e4-43fd-819d-1efb5932af3c-removebg-preview_jwgmzt.png" alt="" />
       <h1 className="text-xl font-bold mt-2   justify-center  font-helvetica">Invicon Rewards</h1>
         
         </div></Link>  
