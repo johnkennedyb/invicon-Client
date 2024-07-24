@@ -156,50 +156,60 @@ const Component = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 mb-5 md:grid-cols-4 gap-6">
             <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg space-y-4">
-              <div className="text-lg font-bold text-gray-700 dark:text-white">Tier 1</div>
-              <div>
+              <div className="text-lg font-bold text-center text-gray-700 dark:text-white">Tier 1</div>
+              <div className='text-center'> 
                 <p className="text-gray-500 dark:text-gray-400">Get 4 Invites or pay</p>
+                <p className="text-gray-500 dark:text-gray-400">or pay</p>
+
                 <p className="text-4xl font-bold text-gray-700 dark:text-white">$10</p>
               </div>
               <button className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-md">
                 Buy Now
               </button>
             </div>
-            <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg space-y-4">
+            <div className="bg-gray-200 dark:bg-gray-800 text-center p-6 rounded-lg space-y-4">
               <div className="text-lg font-bold text-gray-700 dark:text-white">Tier 2</div>
               <div>
                 <p className="text-gray-500 dark:text-gray-400">Invite 10 friends</p>
+                <p className="text-gray-500 dark:text-gray-400">or pay</p>
+
                 <p className="text-4xl font-bold text-gray-700 dark:text-white">$25</p>
               </div>
               <button className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-md">
                 Buy Now
               </button>
             </div>
-            <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg space-y-4">
+            <div className="bg-gray-200 dark:bg-gray-800 text-center p-6 rounded-lg space-y-4">
               <div className="text-lg font-bold text-gray-700 dark:text-white">Tier 3</div>
               <div>
                 <p className="text-gray-500 dark:text-gray-400">Invite 15 friends</p>
+                <p className="text-gray-500 dark:text-gray-400">or pay</p>
+
                 <p className="text-4xl font-bold text-gray-700 dark:text-white">$50</p>
               </div>
               <button className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-md">
                 Buy Now
               </button>
             </div>
-            <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg space-y-4">
+            <div className="bg-gray-200 dark:bg-gray-800 text-center p-6 rounded-lg space-y-4">
               <div className="text-lg font-bold text-gray-700 dark:text-white">Tier 4</div>
               <div>
                 <p className="text-gray-500 dark:text-gray-400">Invite 20 friends</p>
+                <p className="text-gray-500 dark:text-gray-400">or pay</p>
+
                 <p className="text-4xl font-bold text-gray-700 dark:text-white">$100</p>
               </div>
               <button className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-md">
                 Buy Now
               </button>
             </div>
-            <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg space-y-4">
+            <div className="bg-gray-200 dark:bg-gray-800 text-center p-6 rounded-lg space-y-4">
               <div className="text-lg font-bold text-gray-700 dark:text-white">Tier 5</div>
               <div>
                 <p className="text-gray-500 dark:text-gray-400">Invite 20 friends</p>
-                <p className="text-4xl font-bold text-gray-700 dark:text-white">$100</p>
+                <p className="text-gray-500 dark:text-gray-400">or pay</p>
+
+                <p className="text-4xl font-bold text-gray-700 dark:text-white">$150</p>
               </div>
               <button className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-md">
                 Buy Now
