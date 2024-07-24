@@ -195,6 +195,16 @@ const Component = () => {
                 Buy Now
               </button>
             </div>
+            <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg space-y-4">
+              <div className="text-lg font-bold text-gray-700 dark:text-white">Tier 5</div>
+              <div>
+                <p className="text-gray-500 dark:text-gray-400">Invite 20 friends</p>
+                <p className="text-4xl font-bold text-gray-700 dark:text-white">$100</p>
+              </div>
+              <button className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-md">
+                Buy Now
+              </button>
+            </div>
           </div>
         </div>
       </main>
