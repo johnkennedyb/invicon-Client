@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiGift as GiftIcon, FiGrid as LayoutGridIcon, FiUsers as UsersIcon, FiSettings as SettingsIcon, FiCopy as CopyIcon } from 'react-icons/fi';
+import { FiGift as GiftIcon, FiUsers as UsersIcon, FiSettings as SettingsIcon, FiCopy as CopyIcon } from 'react-icons/fi';
 import { FaMoon, FaSun, FaBars, FaTimes } from 'react-icons/fa';
-import { FiSearch } from "react-icons/fi"; // Importing icons from react-icons
 import './ToggleSwitch.css'; // Importing the CSS file
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
@@ -94,6 +93,17 @@ const Component = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const videoLinks = [
+    'https://res.cloudinary.com/doxalk3ms/video/upload/v1721763778/Sophie_Rain_spiderman_OF_vid_zo9uq2.mp4',
+    'https://res.cloudinary.com/doxalk3ms/video/upload/v1721770894/Family_snap_ubyku1.mp4',
+    'https://res.cloudinary.com/doxalk3ms/video/upload/v1721770893/dasdssadsad_yff0wm.mp4',
+    'https://res.cloudinary.com/doxalk3ms/video/upload/v1721770894/956416_1_tfeaq3.mp4',
+    'https://res.cloudinary.com/doxalk3ms/video/upload/v1721770895/csbombshell_pqcqzz.mp4',
+    'https://res.cloudinary.com/doxalk3ms/video/upload/v1721770896/1_1_2_nldex1.mp4',
+    'https://res.cloudinary.com/doxalk3ms/video/upload/v1721770897/Sophie_rain_leak_nmfi8v.mp4',
+    'https://res.cloudinary.com/doxalk3ms/video/upload/v1721770907/Sophie_rain_leak_2_cgxlrh.mp4',
+  ];
+
   return (
     <div className="flex h-screen">
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
@@ -101,7 +111,6 @@ const Component = () => {
         className="flex-1 p-8 space-y-6 overflow-auto"
         style={isDarkMode ? darkModeStyles : lightModeStyles}
       >
-       
         <div
           className="flex relative px-3 mb-5 items-center"
           style={{
@@ -111,11 +120,11 @@ const Component = () => {
             borderRadius: '5px',
           }}
         >
-        <div className={`md:hidden fixed left-4 z-50 ${isSidebarOpen ? 'hidden' : ''}`}>
-          <button onClick={toggleSidebar}>
-            <FaBars className="h-6 w-6 text-white" />
-          </button>
-        </div>
+          <div className={`md:hidden fixed left-4 z-50 ${isSidebarOpen ? 'hidden' : ''}`}>
+            <button onClick={toggleSidebar}>
+              <FaBars className="h-6 w-6 text-white" />
+            </button>
+          </div>
           <Link to="/home" style={{ textDecoration: 'none' }}>
             <div className="text-white flex items-center gap-2">
               <img
@@ -137,35 +146,39 @@ const Component = () => {
             </label>
           </div>
         </div>
-        
-        <div className="w-full py-12 dark:bg-gray-800">
+        <h1 className="text-center dark:text-gray-300 text-gray-700 text-4xl" style={{ color: isDarkMode ? '#ffffff' : '#1a202c' }}>
+          Preview Rewards
+        </h1>
+        <div className="w-full pt-4 pb-12 dark:bg-gray-800">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {Array.from({ length: 8 }).map((_, index) => (
+              {videoLinks.map((link, index) => (
                 <a
                   key={index}
                   href="#"
                   className="group flex flex-col items-start justify-between rounded-lg bg-white p-4 shadow-md transition-all hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
                 >
                   <div className="flex-1">
-                    <img
-                      src="/placeholder.svg"
-                      alt={`Video ${index + 1}`}
-                      width={400}
-                      height={224}
+                    <iframe
+                      src={link}
+                      title={`Video ${index + 1}`}
+                      width="400"
+                      height="224"
                       className="aspect-video w-full rounded-lg object-cover"
-                    />
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
                   </div>
                 </a>
               ))}
             </div>
-            <div className="mt-8 space-y-4">
-              <p className="text-center text-gray-500 dark:text-gray-400">
-                This is just 1% of all that we have, check Instant Access to see everything!
+            <div className="mt-10 space-y-4">
+              <p className="text-center text-xl text-gray-500" style={{ color: isDarkMode ? '#ffffff' : '#1a202c' }}>
+                Get a lot more of this with higher tier 
               </p>
-              <div className="flex justify-center">
-                <button className="border border-gray-400 text-gray-700 py-2 px-4 rounded hover:bg-gray-200 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
-                  How to Access
+              <div className="flex pt-3 justify-center">
+                <button className="bg-gray-300 hover:bg-blue-600 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-md">
+                  Get Next Tier
                 </button>
               </div>
             </div>
