@@ -138,7 +138,7 @@ const Component = () => {
               <div className="bg-gray-200 dark:bg-gray-800 rounded-md px-4 py-2 text-lg font-medium text-gray-700 dark:text-white">
                 https://example.com/invite/ABCD1234
               </div>
-              <button className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-md">
+              <button className="bg-gray-300  hover:bg-blue-600 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-md">
                 Copy
               </button>
             </div>
@@ -153,7 +153,7 @@ const Component = () => {
             </div>
             <div className="flex items-center justify-between">
               <div className="text-4xl font-bold text-gray-700 dark:text-white">15</div>
-              <button className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-md">
+              <button className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2  hover:bg-blue-600 rounded-md">
                 View Invites
               </button>
             </div>
