@@ -101,11 +101,7 @@ const Component = () => {
         className="flex-1 p-8 space-y-6 overflow-auto"
         style={isDarkMode ? darkModeStyles : lightModeStyles}
       >
-        <div className="md:hidden fixed top-4 left-4 z-50">
-          <button onClick={toggleSidebar}>
-            <FaBars className="h-6 w-6 text-white" />
-          </button>
-        </div>
+       
         <div
           className="flex relative px-3 mb-5 items-center"
           style={{
@@ -115,6 +111,11 @@ const Component = () => {
             borderRadius: '5px',
           }}
         >
+        <div className={`md:hidden fixed left-4 z-50 ${isSidebarOpen ? 'hidden' : ''}`}>
+          <button onClick={toggleSidebar}>
+            <FaBars className="h-6 w-6 text-white" />
+          </button>
+        </div>
           <Link to="/home" style={{ textDecoration: 'none' }}>
             <div className="text-white flex items-center gap-2">
               <img

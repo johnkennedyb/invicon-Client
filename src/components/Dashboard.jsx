@@ -97,12 +97,13 @@ const Component = () => {
     <div className="flex h-screen">
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <main className="flex-1 flex flex-col p-8 overflow-auto" style={isDarkMode ? darkModeStyles : lightModeStyles}>
-        <div className="md:hidden fixed top-4 left-4 z-50">
+        
+        <div className="flex relative px-3 mb-5 items-center" style={{ backgroundColor: isDarkMode ? '#101424' : '#282434', left: 0, padding: '10px', borderRadius: '5px' }}>
+        <div className={`md:hidden fixed left-4 z-50 ${isSidebarOpen ? 'hidden' : ''}`}>
           <button onClick={toggleSidebar}>
             <FaBars className="h-6 w-6 text-white" />
           </button>
         </div>
-        <div className="flex relative px-3 mb-5 items-center" style={{ backgroundColor: isDarkMode ? '#101424' : '#282434', left: 0, padding: '10px', borderRadius: '5px' }}>
           <Link to="/home" style={{ textDecoration: 'none' }}>
             <div className="text-white flex items-center gap-2">
               <img src="https://res.cloudinary.com/dw7w2at8k/image/upload/v1721763323/00f6d818-53e4-43fd-819d-1efb5932af3c-removebg-preview_jwgmzt.png" alt="" className="w-8 h-8" />
