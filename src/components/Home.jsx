@@ -147,7 +147,7 @@ const Component = () => {
             <div className="mb-4">
               <div className="flex items-center justify-between">
                 <h2 className="text-xl font-semibold text-gray-700 dark:text-white">Total Invites</h2>
-                <div className="text-3xl font-bold text-gray-700 dark:text-white">Tier 3</div>
+                <div className="text-2xl font-bold text-gray-700 dark:text-white">Current tier: 3</div>
               </div>
               <p className="text-gray-500 dark:text-gray-400">You have invited a total of 15 people.</p>
             </div>
@@ -167,7 +167,7 @@ const Component = () => {
     { tier: 'Tier 5', invites: 20, price: 100 },
   ].map(({ tier, invites, price }, index) => (
     <div key={index} className=" text-center bg-white dark:bg-gray-800 shadow rounded-lg p-6 flex flex-col">
-      <h2 className="text-lg font-bold text-gray-700 dark:text-white">{tier}</h2>
+      <h2 className="text-lg font-bold text-2xl text-gray-700 dark:text-white">{tier}</h2>
       <p className="text-gray-500 font-semibold dark:text-gray-400">{invites} invites</p>
       <p className="text-gray-500 dark:text-gray-400"> or pay</p>
 
