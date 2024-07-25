@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FiGift as GiftIcon, FiUsers as UsersIcon, FiSettings as SettingsIcon, FiCopy as CopyIcon } from 'react-icons/fi';
-import { FaMoon, FaSun, FaBars, FaTimes } from 'react-icons/fa';
+import { FaMoon, FaSun, FaBars, FaTimes, FaPlay, FaPause } from 'react-icons/fa';
 import './ToggleSwitch.css'; // Importing the CSS file
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
@@ -81,6 +81,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 const Component = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [playingIndex, setPlayingIndex] = useState(null);
+  const videoRefs = useRef([]);
 
   const darkModeStyles = { backgroundColor: '#101424' };
   const lightModeStyles = { backgroundColor: '#ffffff' };
@@ -93,15 +95,28 @@ const Component = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const handlePlayPause = (index) => {
+    if (playingIndex === index) {
+      videoRefs.current[index].pause();
+      setPlayingIndex(null);
+    } else {
+      if (playingIndex !== null) {
+        videoRefs.current[playingIndex].pause();
+      }
+      videoRefs.current[index].play();
+      setPlayingIndex(index);
+    }
+  };
+
   const videoLinks = [
-    'https://www.youtube.com/watch?v=jYq4_-eQVvo',
-    'https://www.youtube.com/watch?v=jYq4_-eQVvo',
-    'https://www.youtube.com/watch?v=jYq4_-eQVvo',
-    'https://www.youtube.com/watch?v=jYq4_-eQVvo',
-    'https://www.youtube.com/watch?v=jYq4_-eQVvo',
-    'https://www.youtube.com/watch?v=jYq4_-eQVvo',
-    'https://www.youtube.com/watch?v=jYq4_-eQVvo',
-    'https://www.youtube.com/watch?v=jYq4_-eQVvo',
+    'https://www.w3schools.com/html/mov_bbb.mp4',
+    'https://www.w3schools.com/html/mov_bbb.mp4',
+    'https://www.w3schools.com/html/mov_bbb.mp4',
+    'https://www.w3schools.com/html/mov_bbb.mp4',
+    'https://www.w3schools.com/html/mov_bbb.mp4',
+    'https://www.w3schools.com/html/mov_bbb.mp4',
+    'https://www.w3schools.com/html/mov_bbb.mp4',
+    'https://www.w3schools.com/html/mov_bbb.mp4',
   ];
 
   return (
@@ -112,41 +127,40 @@ const Component = () => {
         style={isDarkMode ? darkModeStyles : lightModeStyles}
       >
         <div
-  className="flex relative px-3 mb-5 items-center justify-between md:justify-start"
-  style={{
-    backgroundColor: isDarkMode ? '#101424' : '#282434',
-    left: 0,
-    padding: '10px',
-    borderRadius: '5px',
-  }}
->
-  <div className={`md:hidden fixed left-12 z-50 ${isSidebarOpen ? 'hidden' : ''}`}>
-    <button onClick={toggleSidebar}>
-      <FaBars className="h-6 w-6 text-white" />
-    </button>
-  </div>
-  <Link to="/home" style={{ textDecoration: 'none' }} className="flex-1 md:flex-none">
-    <div className="text-white flex items-center gap-2 justify-center md:justify-start">
-      <img
-        src="https://res.cloudinary.com/dw7w2at8k/image/upload/v1721763323/00f6d818-53e4-43fd-819d-1efb5932af3c-removebg-preview_jwgmzt.png"
-        alt=""
-        className="w-8 h-8"
-      />
-      <h1 className="text-2xl font-bold font-helvetica">Invicon</h1>
-    </div>
-  </Link>
-  <div className="absolute top-4  right-4">
-    <label className="switch">
-      <input type="checkbox" checked={isDarkMode} onChange={toggleTheme} />
-      <span className="slider round">
-        <span className="icon-container">
-          {isDarkMode ? <FaSun color="#fff" /> : <FaMoon color="#333" />}
-        </span>
-      </span>
-    </label>
-  </div>
-</div>
-
+          className="flex relative px-3 mb-5 items-center"
+          style={{
+            backgroundColor: isDarkMode ? '#101424' : '#282434',
+            left: 0,
+            padding: '10px',
+            borderRadius: '5px',
+          }}
+        >
+          <div className={`md:hidden fixed left-4 z-50 ${isSidebarOpen ? 'hidden' : ''}`}>
+            <button onClick={toggleSidebar}>
+              <FaBars className="h-6 w-6 text-white" />
+            </button>
+          </div>
+          <Link to="/home" style={{ textDecoration: 'none' }}>
+            <div className="text-white flex items-center gap-2">
+              <img
+                src="https://res.cloudinary.com/dw7w2at8k/image/upload/v1721763323/00f6d818-53e4-43fd-819d-1efb5932af3c-removebg-preview_jwgmzt.png"
+                alt=""
+                className="w-8 h-8"
+              />
+              <h1 className="text-2xl font-bold font-helvetica">Invicon</h1>
+            </div>
+          </Link>
+          <div className="absolute top-4 px-3 right-4">
+            <label className="switch">
+              <input type="checkbox" checked={isDarkMode} onChange={toggleTheme} />
+              <span className="slider round">
+                <span className="icon-container">
+                  {isDarkMode ? <FaSun color="#fff" /> : <FaMoon color="#333" />}
+                </span>
+              </span>
+            </label>
+          </div>
+        </div>
         <h1 className="text-center dark:text-gray-300 text-gray-700 text-4xl" style={{ color: isDarkMode ? '#ffffff' : '#1a202c' }}>
           Preview Rewards
         </h1>
@@ -154,23 +168,25 @@ const Component = () => {
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {videoLinks.map((link, index) => (
-                <a
+                <div
                   key={index}
-                  href="#"
-                  className="group flex flex-col items-start justify-between rounded-lg bg-white p-4 shadow-md transition-all hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
+                  className="group relative flex flex-col items-start justify-between rounded-lg bg-white p-4 shadow-md transition-all hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
                 >
-                  <div className="flex-1">
-                    <iframe
+                  <div className="flex-1 w-full relative">
+                    <video
+                      ref={(el) => (videoRefs.current[index] = el)}
                       src={link}
-                      title={`Video ${index + 1}`}
-                      width="400"
-                      height="224"
-                      className="aspect-video w-full rounded-lg object-cover"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
+                      className="aspect-video w-full h-64 rounded-lg object-cover"
+                      controls={false}
+                    />
+                    <button
+                      onClick={() => handlePlayPause(index)}
+                      className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-3xl"
+                    >
+                      {playingIndex === index ? <FaPause /> : <FaPlay />}
+                    </button>
                   </div>
-                </a>
+                </div>
               ))}
             </div>
             <div className="mt-10 space-y-4">
@@ -191,3 +207,4 @@ const Component = () => {
 };
 
 export default Component;
+
