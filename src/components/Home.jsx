@@ -188,6 +188,11 @@ const Component = () => {
         fetchInviteData();
     }, []);
 
+    const handlePayButton = (tier, price) => {
+        // Handle the payment logic here
+        alert(`Purchased ${tier} for $${price}`);
+    };
+
     return (
         <div className="flex">
             <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
