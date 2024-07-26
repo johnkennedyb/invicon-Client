@@ -246,9 +246,15 @@ const Component = () => {
                         </div>
                         <div className="flex items-center justify-between">
                             <div className="text-2xl font-bold text-gray-700 dark:text-white">Current tier: {inviteData.tier}</div>
-                            <button className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 hover:bg-blue-600 rounded-md">
+                           
+                           <Link
+                    to="/dashboard"
+                    className="flex text-white items-center gap-2 rounded-md px-3 py-2 text-sm font-medium font-helvetica transition-colors hover:bg-muted"
+                    style={{ textDecoration: 'none' }}
+                > 
+                <button className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 hover:bg-blue-600 rounded-md">
                                 View Invites
-                            </button>
+                            </button></Link>
                         </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 mb-5 md:grid-cols-4 gap-6">
